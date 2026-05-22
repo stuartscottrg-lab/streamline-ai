@@ -1,29 +1,41 @@
-/* ── PROGRESS BAR ── */
-const progressBar = document.getElementById('progress-bar');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.width = (scrollTop / docHeight * 100) + '%';
-});
+/* ── SCROLL REVEAL ── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = `${i * 60}ms`;
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-/* ── NAVBAR SCROLL ── */
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ── NAV SCROLL ── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
+  navbar.style.borderBottomColor = window.scrollY > 10
+    ? 'rgba(0,0,0,0.08)'
+    : 'var(--border)';
+}, { passive: true });
 
-/* ── HAMBURGER MENU ── */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
+/* ── HAMBURGER ── */
+const hamburger  = document.getElementById('hamburger');
+const mobileNav  = document.getElementById('mobile-nav');
 hamburger.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  hamburger.setAttribute('aria-expanded', open);
+  const open = mobileNav.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(open));
+  mobileNav.setAttribute('aria-hidden', String(!open));
 });
-document.querySelectorAll('.mob-link, .mob-cta').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  });
 });
 
-/* ── FAQ ACCORDION ── */
+/* ── FAQ ── */
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -38,28 +50,23 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-/* ── LEAD FORM ── */
-const leadForm = document.getElementById('lead-form');
-if (leadForm) {
-  leadForm.addEventListener('submit', async (e) => {
+/* ── FORM HANDLER ── */
+async function handleForm(formId, btnId, successId, errorId) {
+  const form    = document.getElementById(formId);
+  const btn     = document.getElementById(btnId);
+  const success = document.getElementById(successId);
+  const error   = document.getElementById(errorId);
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = document.getElementById('form-btn');
-    const btnText = document.getElementById('btn-text');
-    const btnLoading = document.getElementById('btn-loading');
-    const successEl = document.getElementById('form-success');
-    const errorEl = document.getElementById('form-error');
-
     btn.disabled = true;
-    btnText.style.display = 'none';
-    btnLoading.style.display = 'inline';
-    successEl.style.display = 'none';
-    errorEl.style.display = 'none';
+    const original = btn.textContent;
+    btn.textContent = 'Sending...';
+    success.style.display = 'none';
+    error.style.display   = 'none';
 
-    const data = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      firm_type: document.getElementById('firm-type').value,
-    };
+    const data = Object.fromEntries(new FormData(form));
 
     try {
       const res = await fetch('/api/lead', {
@@ -68,130 +75,19 @@ if (leadForm) {
         body: JSON.stringify(data),
       });
       if (res.ok) {
-        successEl.style.display = 'flex';
-        leadForm.reset();
+        success.style.display = 'block';
+        form.reset();
       } else {
-        errorEl.style.display = 'block';
+        error.style.display = 'block';
       }
     } catch {
-      errorEl.style.display = 'block';
+      error.style.display = 'block';
     } finally {
       btn.disabled = false;
-      btnText.style.display = 'inline';
-      btnLoading.style.display = 'none';
+      btn.textContent = original;
     }
   });
 }
 
-/* ── CHAT WIDGET ── */
-const chatToggle = document.getElementById('chat-toggle');
-const chatBox = document.getElementById('chat-box');
-const chatClose = document.getElementById('chat-close');
-const chatInput = document.getElementById('chat-input');
-const chatSend = document.getElementById('chat-send');
-const chatMessages = document.getElementById('chat-messages');
-const chatNotif = document.getElementById('chat-notif');
-const chatIconOpen = document.getElementById('chat-icon-open');
-const chatIconClose = document.getElementById('chat-icon-close');
-const quickReplies = document.getElementById('quick-replies');
-
-let chatOpen = false;
-let conversationHistory = [];
-
-function toggleChat() {
-  chatOpen = !chatOpen;
-  chatBox.classList.toggle('chat-hidden', !chatOpen);
-  chatBox.classList.toggle('chat-visible', chatOpen);
-  chatIconOpen.style.display = chatOpen ? 'none' : 'block';
-  chatIconClose.style.display = chatOpen ? 'block' : 'none';
-  if (chatOpen) {
-    chatNotif.style.display = 'none';
-    chatInput.focus();
-  }
-}
-
-chatToggle.addEventListener('click', toggleChat);
-chatClose.addEventListener('click', toggleChat);
-
-function appendMessage(text, role) {
-  const div = document.createElement('div');
-  div.className = `msg msg-${role}`;
-  div.innerHTML = `<div class="chat-bubble">${escapeHtml(text)}</div>`;
-  chatMessages.appendChild(div);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function appendTyping() {
-  const div = document.createElement('div');
-  div.className = 'msg msg-ai';
-  div.id = 'typing-indicator';
-  div.innerHTML = '<div class="chat-bubble typing"><span></span><span></span><span></span></div>';
-  chatMessages.appendChild(div);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-  return div;
-}
-
-function removeTyping() {
-  const el = document.getElementById('typing-indicator');
-  if (el) el.remove();
-}
-
-function escapeHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-async function sendMessage(text) {
-  if (!text.trim()) return;
-  appendMessage(text, 'user');
-  chatInput.value = '';
-  quickReplies.style.display = 'none';
-
-  conversationHistory.push({ role: 'user', content: text });
-
-  const typing = appendTyping();
-  chatSend.disabled = true;
-
-  try {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: conversationHistory }),
-    });
-    const data = await res.json();
-    removeTyping();
-    const reply = data.reply || "Thanks for your message! Our team will be in touch shortly.";
-    appendMessage(reply, 'ai');
-    conversationHistory.push({ role: 'assistant', content: reply });
-  } catch {
-    removeTyping();
-    appendMessage("Sorry, I'm having a moment. Please email us at hello@streamlineai.co.uk", 'ai');
-  } finally {
-    chatSend.disabled = false;
-  }
-}
-
-chatSend.addEventListener('click', () => sendMessage(chatInput.value));
-chatInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(chatInput.value); }
-});
-
-document.querySelectorAll('.qr-btn').forEach(btn => {
-  btn.addEventListener('click', () => sendMessage(btn.dataset.msg));
-});
-
-/* ── INTERSECTION OBSERVER — fade in on scroll ── */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.service-card, .case-card, .testi-card, .step-card, .problem-card, .as-card').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
+handleForm('lead-form',    'form-btn',    'form-success',    'form-error');
+handleForm('contact-form', 'contact-btn', 'contact-success', 'contact-error');

@@ -3,230 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StreamLine AI – AI Automation for Professional Services</title>
-  <meta name="description" content="We install AI systems into law firms, financial advisors, and accountancy practices that generate leads, book clients, and automate operations — on autopilot." />
+  <title>StreamLine AI — AI for Professional Services</title>
+  <meta name="description" content="StreamLine deploys AI into law firms, financial advisors, and accountancy practices. Lead intake, document generation, client onboarding — done automatically." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="static/css/style.css" />
 </head>
 <body>
 
-  <!-- Progress bar -->
-  <div id="progress-bar"></div>
-
   <!-- ── NAV ── -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#" class="logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-          <path d="M14 7L21 11V17L14 21L7 17V11L14 7Z" fill="#C9A84C" opacity="0.3"/>
-          <circle cx="14" cy="14" r="3" fill="#C9A84C"/>
-        </svg>
-        <span>StreamLine<span class="gold">AI</span></span>
-      </a>
+      <a href="/" class="logo">StreamLine AI</a>
       <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#course">Course</a></li>
         <li><a href="#about">About</a></li>
       </ul>
-      <a href="#booking" class="btn-nav">Book a Call</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
+      <a href="#contact" class="btn-request">Request access</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
     </div>
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#services" class="mob-link">Services</a>
-      <a href="#results" class="mob-link">Results</a>
-      <a href="#course" class="mob-link">Course</a>
-      <a href="#about" class="mob-link">About</a>
-      <a href="#booking" class="btn-primary mob-cta">Book a Free Call</a>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn-request">Request access</a>
     </div>
   </nav>
 
   <!-- ── HERO ── -->
   <section id="hero">
-    <div class="hero-bg">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="grid-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <div class="badge-pill">
-        <span class="badge-dot"></span>
-        AI Automation for Professional Services
-      </div>
-      <h1>Stop Losing <span class="gold-text">Clients</span><br>to Firms that Run on AI</h1>
-      <p class="hero-sub">We install intelligent AI systems into law firms, financial advisors, and accountancy practices — automating lead generation, client onboarding, and service delivery so your team focuses on high-value work.</p>
-      <div class="hero-ctas">
-        <a href="#booking" class="btn-primary">Book a Free AI Audit <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="#course" class="btn-ghost">View the Course</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">40+</span>
-          <span class="stat-label">Hours Saved / Month</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-num">3×</span>
-          <span class="stat-label">More Qualified Leads</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-num">72h</span>
-          <span class="stat-label">Average Deploy Time</span>
-        </div>
+    <div class="hero-inner">
+      <p class="hero-kicker">AI for professional services</p>
+      <h1>The firms setting the pace<br><em>aren't working harder.</em></h1>
+      <p class="hero-body">StreamLine deploys AI into law firms, financial advisors, and accountancy practices. Lead intake, document generation, client onboarding — running automatically while your team focuses on work that actually requires them.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request access</a>
+        <a href="#work" class="btn-text">See client work <span aria-hidden="true">↓</span></a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="dashboard-mock">
-        <div class="mock-header">
-          <div class="mock-dots"><span></span><span></span><span></span></div>
-          <span class="mock-title">StreamLine Dashboard</span>
-        </div>
-        <div class="mock-body">
-          <div class="mock-metric">
-            <span class="mm-label">Leads This Week</span>
-            <span class="mm-value gold">24</span>
-            <span class="mm-change up">+18% vs last week</span>
-          </div>
-          <div class="mock-metric">
-            <span class="mm-label">AI Chat Conversations</span>
-            <span class="mm-value">187</span>
-            <span class="mm-change up">+31%</span>
-          </div>
-          <div class="mock-metric">
-            <span class="mm-label">Bookings Automated</span>
-            <span class="mm-value">12</span>
-            <span class="mm-change up">+25%</span>
-          </div>
-          <div class="mock-chart">
-            <div class="chart-bar" style="height:40%"></div>
-            <div class="chart-bar" style="height:60%"></div>
-            <div class="chart-bar" style="height:45%"></div>
-            <div class="chart-bar" style="height:75%"></div>
-            <div class="chart-bar" style="height:65%"></div>
-            <div class="chart-bar active" style="height:90%"></div>
-          </div>
-          <div class="mock-chat">
-            <div class="chat-bubble ai">Hi! I can answer any questions about our services...</div>
-            <div class="chat-bubble user">What's your pricing for law firms?</div>
-            <div class="chat-bubble ai typing"><span></span><span></span><span></span></div>
-          </div>
-        </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <!-- ── TRUST STRIP ── -->
+  <section class="trust-strip">
+    <div class="container">
+      <p class="trust-label">Deployed at practices across financial services, legal, and professional advisory</p>
+      <div class="trust-firms">
+        <span>Financial Advisory</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Commercial Law</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Accountancy</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Tax Advisory</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Dispute Resolution</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>IFA Practices</span>
       </div>
     </div>
   </section>
 
-  <!-- ── TICKER ── -->
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <span>Lead Generation Automation</span>
-      <span class="ticker-dot">◆</span>
-      <span>AI Client Onboarding</span>
-      <span class="ticker-dot">◆</span>
-      <span>24/7 Chatbot Qualification</span>
-      <span class="ticker-dot">◆</span>
-      <span>Automated Booking Systems</span>
-      <span class="ticker-dot">◆</span>
-      <span>Email Nurture Sequences</span>
-      <span class="ticker-dot">◆</span>
-      <span>Document Automation</span>
-      <span class="ticker-dot">◆</span>
-      <span>CRM Integration</span>
-      <span class="ticker-dot">◆</span>
-      <span>Compliance AI Assistants</span>
-      <span class="ticker-dot">◆</span>
-      <span>Lead Generation Automation</span>
-      <span class="ticker-dot">◆</span>
-      <span>AI Client Onboarding</span>
-      <span class="ticker-dot">◆</span>
-      <span>24/7 Chatbot Qualification</span>
-      <span class="ticker-dot">◆</span>
-      <span>Automated Booking Systems</span>
-      <span class="ticker-dot">◆</span>
-      <span>Email Nurture Sequences</span>
-      <span class="ticker-dot">◆</span>
-      <span>Document Automation</span>
-      <span class="ticker-dot">◆</span>
-    </div>
-  </div>
-
-  <!-- ── PROBLEM / SOLUTION ── -->
-  <section id="problem" class="section">
+  <!-- ── FEATURES BENTO ── -->
+  <section id="features" class="section">
     <div class="container">
-      <div class="section-label">The Problem</div>
-      <h2>Your Competitors Are Already Using AI.<br><span class="gold-text">You're Still Doing It Manually.</span></h2>
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="prob-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ef4444" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Hours Wasted on Admin</h3>
-          <p>Your team spends 30–40% of their week on tasks AI could handle — intake forms, scheduling, follow-ups, and document prep.</p>
-        </div>
-        <div class="problem-card">
-          <div class="prob-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#ef4444" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Leads Falling Through the Cracks</h3>
-          <p>Enquiries come in out of hours, through contact forms, on weekends — and by the time you respond, they've gone to a competitor.</p>
-        </div>
-        <div class="problem-card">
-          <div class="prob-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Scaling Hits a Wall</h3>
-          <p>Every new client means more staff, more cost, more complexity. Your revenue can't grow unless headcount does — that's broken.</p>
-        </div>
+      <div class="section-header">
+        <span class="section-tag">What it does</span>
+        <h2>Every hour your team spends on admin<br>is an hour not spent on clients.</h2>
       </div>
-      <div class="solution-block">
-        <div class="solution-text">
-          <div class="section-label">The Solution</div>
-          <h2>We Install AI That Works<br><span class="gold-text">While You Sleep</span></h2>
-          <p>StreamLine AI designs and deploys bespoke automation systems tailored to your firm. From the first website visit to a signed client — every touchpoint is handled by AI that qualifies, books, nurtures, and converts on your behalf.</p>
-          <ul class="solution-list">
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> AI chatbot qualifies leads 24/7</li>
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Automated booking directly to your calendar</li>
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Email sequences that nurture and convert</li>
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Document generation and onboarding flows</li>
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Full CRM and analytics integration</li>
-          </ul>
-          <a href="#booking" class="btn-primary">Get My Free AI Audit</a>
+      <div class="bento-grid">
+
+        <div class="bento-card bento-wide reveal">
+          <div class="bento-content">
+            <div class="bento-num">01</div>
+            <h3>Leads qualified around the clock</h3>
+            <p>An AI assistant on your site handles every enquiry — law firm, IFA, accountant — asking the right questions, filtering time-wasters, and booking qualified prospects directly into your calendar. You wake up to meetings, not messages.</p>
+          </div>
+          <div class="bento-visual">
+            <div class="mock-window">
+              <div class="mock-chrome"><span></span><span></span><span></span></div>
+              <div class="mock-chat-ui">
+                <div class="mock-msg mock-ai">Hi — I can help you get started. What kind of advice are you looking for?</div>
+                <div class="mock-msg mock-user">I need help with an employment dispute</div>
+                <div class="mock-msg mock-ai">Got it. Are you the employer or employee in this dispute?</div>
+                <div class="mock-msg mock-user">I'm the employer</div>
+                <div class="mock-msg mock-ai">Understood. I've found a 30-minute slot with the team on Thursday at 2pm — does that work?</div>
+                <div class="mock-booked">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#346538" stroke-width="1.2"/><path d="M4 7l2 2 4-4" stroke="#346538" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  Consultation booked — Thursday 2pm
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="solution-visual">
-          <div class="flow-diagram">
-            <div class="flow-node node-top">
-              <div class="fn-icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 1 1 0 12A6 6 0 0 1 10 2zM3.5 17a8 8 0 0 1 13 0" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+        <div class="bento-card reveal">
+          <div class="bento-num">02</div>
+          <h3>Bookings without the back-and-forth</h3>
+          <p>Clients pick a time, confirm, and get a reminder. No phone tag. No manual scheduling. Your calendar fills up on its own.</p>
+        </div>
+
+        <div class="bento-card reveal">
+          <div class="bento-num">03</div>
+          <h3>Documents in seconds</h3>
+          <p>Client letters, intake forms, NDAs, engagement letters — generated from templates the moment a new client is confirmed. Your team reviews and sends, not drafts from scratch.</p>
+        </div>
+
+        <div class="bento-card reveal">
+          <div class="bento-num">04</div>
+          <h3>Every lead, tracked</h3>
+          <p>A clean CRM view of every enquiry, where it sits in the pipeline, and what action is needed. Nothing falls through the cracks because a junior forgot to follow up.</p>
+        </div>
+
+        <div class="bento-card bento-dark reveal">
+          <div class="bento-num bento-num-light">05</div>
+          <h3>Built for regulated industries</h3>
+          <p>GDPR-compliant by default. Data stays in the UK. No third-party sharing. Consent flows built in from day one — not bolted on after a complaint.</p>
+          <div class="compliance-tags">
+            <span class="ctag">GDPR</span>
+            <span class="ctag">UK Data Residency</span>
+            <span class="ctag">SOC 2 Ready</span>
+            <span class="ctag">No Data Resale</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PULL QUOTE ── -->
+  <section class="pull-quote-section">
+    <div class="container">
+      <blockquote class="pull-quote reveal">
+        <p>"We used to lose half our weekend enquiries. They'd come in Saturday afternoon and someone else would have returned their call by Monday. Now they're booked before we've had our coffee."</p>
+        <footer>
+          <cite>Partner, Financial Advisory Practice — London</cite>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ── CASE STUDIES ── -->
+  <section id="work" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Client work</span>
+        <h2>Two firms. Real problems.<br>Built and running.</h2>
+      </div>
+      <div class="cases-list">
+
+        <article class="case-item reveal">
+          <div class="case-meta">
+            <span class="case-num">01</span>
+            <span class="case-type">Financial Advisory</span>
+          </div>
+          <div class="case-body">
+            <h3>Rendezvous Advisory</h3>
+            <p class="case-desc">Independent financial expert reports for solicitors and insurers. The firm had a strong reputation and a broken lead process — enquiries came in by email and phone, got logged manually, and followed up whenever someone remembered. We rebuilt it: a new site, AI intake, and an automated follow-up sequence that runs without anyone touching it.</p>
+            <div class="case-results">
+              <div class="cr">
+                <span class="cr-n">3×</span>
+                <span class="cr-l">enquiries converted</span>
               </div>
-              <span>Prospect Visits Site</span>
-            </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-node">
-              <div class="fn-icon gold-bg">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4h12v10H4zM4 7h12M8 7v7" stroke="#0a0a0a" stroke-width="1.5"/></svg>
+              <div class="cr">
+                <span class="cr-n">100%</span>
+                <span class="cr-l">enquiries responded to</span>
               </div>
-              <span>AI Chat Qualifies</span>
-            </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-node">
-              <div class="fn-icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#C9A84C" stroke-width="1.5"/><path d="M7 10h6M7 13h4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <div class="cr">
+                <span class="cr-n">48h</span>
+                <span class="cr-l">to deploy</span>
               </div>
-              <span>Email Sequence Fires</span>
             </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-node node-bottom">
-              <div class="fn-icon gold-bg">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 9l5 5 9-9" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </article>
+
+        <div class="case-divider"></div>
+
+        <article class="case-item reveal">
+          <div class="case-meta">
+            <span class="case-num">02</span>
+            <span class="case-type">Legal Services</span>
+          </div>
+          <div class="case-body">
+            <h3>Legal AI Platform</h3>
+            <p class="case-desc">A growing practice drowning in manual intake. New clients had to fill out paper forms, email documents back, wait for someone to process them, then wait again for a call. We replaced that with an AI intake assistant that qualifies clients, collects documents, generates the initial paperwork, and books the first consultation automatically.</p>
+            <div class="case-results">
+              <div class="cr">
+                <span class="cr-n">40h</span>
+                <span class="cr-l">saved per month</span>
               </div>
-              <span>Client Booked & Signed</span>
+              <div class="cr">
+                <span class="cr-n">90%</span>
+                <span class="cr-l">faster onboarding</span>
+              </div>
+              <div class="cr">
+                <span class="cr-n">24/7</span>
+                <span class="cr-l">intake coverage</span>
+              </div>
             </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section id="process" class="section section-bone">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The process</span>
+        <h2>From audit to live in 72 hours.</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="ps-num">01</div>
+          <div class="ps-content">
+            <h3>Audit</h3>
+            <p>We map every step in your current intake and operations — where time goes, where leads go quiet, what your team does that software could do instead. This takes 30 minutes and costs nothing.</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="ps-num">02</div>
+          <div class="ps-content">
+            <h3>Build</h3>
+            <p>We design and build your AI stack — the chatbot, booking integration, email sequences, and CRM setup — tailored to how your firm actually works. Not a template. Not a SaaS login. Yours.</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="ps-num">03</div>
+          <div class="ps-content">
+            <h3>Launch</h3>
+            <p>We deploy, run the first tests together, and hand it over. You get the controls, we stay on for 30 days to fix anything that needs fixing. After that, it runs on its own.</p>
           </div>
         </div>
       </div>
@@ -234,102 +246,68 @@
   </section>
 
   <!-- ── SERVICES ── -->
-  <section id="services" class="section section-dark">
+  <section id="services" class="section">
     <div class="container">
-      <div class="section-label">What We Offer</div>
-      <h2>Three Ways We Can<br><span class="gold-text">Work Together</span></h2>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="sc-badge">Most Popular</div>
-          <div class="sc-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="#C9A84C" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="#C9A84C" opacity="0.4"/><path d="M16 12v4l3 2" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Done-For-You AI System</h3>
-          <p class="sc-price"><span class="price-from">from</span> £2,500</p>
-          <p>We audit your firm, design a bespoke AI automation stack, and deploy it — from chatbot to booking to onboarding — in under 72 hours.</p>
-          <ul class="sc-features">
-            <li>Custom AI lead qualification chatbot</li>
-            <li>Automated calendar booking</li>
-            <li>Email nurture sequences (7-touch)</li>
-            <li>CRM setup and integration</li>
-            <li>30-day post-launch support</li>
-          </ul>
-          <a href="#booking" class="btn-primary btn-full">Book a Discovery Call</a>
-        </div>
-
-        <div class="service-card service-card-gold">
-          <div class="sc-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" stroke="#0a0a0a" stroke-width="1.5"/><path d="M10 16h12M10 11h12M10 21h8" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>AI Retainer</h3>
-          <p class="sc-price"><span class="price-from">from</span> £750<span class="price-mo">/mo</span></p>
-          <p>Ongoing AI management, optimisation, and new automation builds. Your dedicated AI partner for continuous growth.</p>
-          <ul class="sc-features sc-features-dark">
-            <li>Monthly AI strategy sessions</li>
-            <li>Continuous system optimisation</li>
-            <li>New automation builds each month</li>
-            <li>Priority support and monitoring</li>
-            <li>Quarterly performance reports</li>
-          </ul>
-          <a href="#booking" class="btn-dark btn-full">Get Started</a>
-        </div>
-
-        <div class="service-card" id="course">
-          <div class="sc-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6l14 8-14 8L2 14l14-8z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 20l14 8 14-8" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round" opacity="0.6"/></svg>
-          </div>
-          <h3>AI Business Course</h3>
-          <p class="sc-price"><span class="price-from"></span>£497</p>
-          <p>The exact system we use to automate professional services firms — packaged into a step-by-step course you can implement yourself.</p>
-          <ul class="sc-features">
-            <li>10 modules, 40+ video lessons</li>
-            <li>Done-for-you templates and scripts</li>
-            <li>Chatbot setup walkthrough</li>
-            <li>Email automation blueprints</li>
-            <li>Private community access</li>
-          </ul>
-          <a href="#lead-magnet" class="btn-ghost btn-full">Get Free Preview Lesson</a>
-        </div>
-
+      <div class="section-header">
+        <span class="section-tag">Services</span>
+        <h2>Three ways to work together.</h2>
       </div>
-    </div>
-  </section>
+      <div class="services-table">
 
-  <!-- ── RESULTS / CASE STUDIES ── -->
-  <section id="results" class="section">
-    <div class="container">
-      <div class="section-label">Proof It Works</div>
-      <h2>Real Firms.<br><span class="gold-text">Real Results.</span></h2>
-      <div class="cases-grid">
-
-        <div class="case-card">
-          <div class="case-logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L22 7V17L12 22L2 17V7L12 2Z" stroke="#C9A84C" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#C9A84C"/></svg>
-            Rendezvous Advisory
+        <div class="service-row reveal">
+          <div class="sr-left">
+            <span class="sr-tag">Most requested</span>
+            <h3>Done For You</h3>
+            <p class="sr-price">from £2,500</p>
           </div>
-          <div class="case-tag">Financial Expert Reports</div>
-          <h3>Independent Financial Advisory — Lead System Rebuild</h3>
-          <p>Rendezvous Advisory needed a professional digital presence and automated lead capture. We built a custom site with integrated AI qualification and automated follow-up, turning a manual enquiry process into a streamlined pipeline.</p>
-          <div class="case-metrics">
-            <div class="cm"><span class="cm-num">3×</span><span class="cm-label">More Enquiries</span></div>
-            <div class="cm"><span class="cm-num">100%</span><span class="cm-label">Response Automation</span></div>
-            <div class="cm"><span class="cm-num">48h</span><span class="cm-label">Deploy Time</span></div>
+          <div class="sr-right">
+            <p>We build and deploy the full AI stack for your firm. Chatbot, booking automation, email sequences, CRM — everything configured for your specific practice. Live within 72 hours of signing.</p>
+            <ul class="sr-list">
+              <li>Custom AI lead qualification</li>
+              <li>Automated calendar booking</li>
+              <li>7-email nurture sequence</li>
+              <li>CRM setup and pipeline view</li>
+              <li>30 days post-launch support</li>
+            </ul>
+            <a href="#contact" class="btn-primary">Request access</a>
           </div>
         </div>
 
-        <div class="case-card">
-          <div class="case-logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#C9A84C" stroke-width="1.5"/><path d="M7 12h10M7 8h10M7 16h6" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Legal AI Platform
+        <div class="sr-divider"></div>
+
+        <div class="service-row reveal">
+          <div class="sr-left">
+            <h3>Retainer</h3>
+            <p class="sr-price">from £750/mo</p>
           </div>
-          <div class="case-tag">Legal Services</div>
-          <h3>Law Practice — AI Document & Client Intake System</h3>
-          <p>A growing legal practice was drowning in manual intake forms, document requests, and client chasing. We deployed an AI intake assistant that qualifies new clients, generates initial documentation, and books consultations automatically.</p>
-          <div class="case-metrics">
-            <div class="cm"><span class="cm-num">40h</span><span class="cm-label">Saved Per Month</span></div>
-            <div class="cm"><span class="cm-num">90%</span><span class="cm-label">Faster Onboarding</span></div>
-            <div class="cm"><span class="cm-num">24/7</span><span class="cm-label">Intake Coverage</span></div>
+          <div class="sr-right">
+            <p>Ongoing AI builds, optimisation, and strategy. A new automation each month, performance reporting, and priority support. For firms that want to keep moving.</p>
+            <ul class="sr-list">
+              <li>Monthly strategy sessions</li>
+              <li>Continuous system optimisation</li>
+              <li>New automation builds monthly</li>
+              <li>Quarterly performance reports</li>
+            </ul>
+            <a href="#contact" class="btn-outline">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="sr-divider"></div>
+
+        <div class="service-row reveal">
+          <div class="sr-left">
+            <h3>AI Course</h3>
+            <p class="sr-price">£497</p>
+          </div>
+          <div class="sr-right">
+            <p>The same system we use with clients, packaged into 10 modules. Every template, every script, every workflow — build it yourself at your own pace. One-time purchase, lifetime access.</p>
+            <ul class="sr-list">
+              <li>10 modules, 40+ lessons</li>
+              <li>All templates and scripts included</li>
+              <li>Chatbot setup walkthrough</li>
+              <li>Private community</li>
+            </ul>
+            <a href="#lead-magnet" class="btn-outline">Get a free preview</a>
           </div>
         </div>
 
@@ -337,198 +315,58 @@
     </div>
   </section>
 
-  <!-- ── HOW IT WORKS ── -->
-  <section id="how" class="section section-dark">
+  <!-- ── SECOND QUOTE ── -->
+  <section class="pull-quote-section pull-quote-bone">
     <div class="container">
-      <div class="section-label">The Process</div>
-      <h2>From Discovery to<br><span class="gold-text">Deployed in 72 Hours</span></h2>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">01</div>
-          <h3>Free AI Audit</h3>
-          <p>We map your current operations, identify every manual process that can be automated, and quantify the time and revenue impact. Zero obligation.</p>
-        </div>
-        <div class="step-connector">→</div>
-        <div class="step-card">
-          <div class="step-num">02</div>
-          <h3>Custom Build</h3>
-          <p>We design and build your AI stack — chatbot, booking system, email sequences, and CRM integrations — tailored to your firm's exact workflow.</p>
-        </div>
-        <div class="step-connector">→</div>
-        <div class="step-card">
-          <div class="step-num">03</div>
-          <h3>Launch & Scale</h3>
-          <p>We deploy, test, and hand over the keys. Your system goes live, starts generating leads, and we monitor performance for the first 30 days.</p>
-        </div>
-      </div>
+      <blockquote class="pull-quote pull-quote-sm reveal">
+        <p>"The course gave us everything we needed to set it up ourselves. The chatbot alone saves one of our paralegals about a day a week."</p>
+        <footer>
+          <cite>Director, Commercial Law Practice — Manchester</cite>
+        </footer>
+      </blockquote>
     </div>
   </section>
 
   <!-- ── LEAD MAGNET ── -->
-  <section id="lead-magnet" class="section">
+  <section id="lead-magnet" class="section section-bone">
     <div class="container">
-      <div class="lead-magnet-box">
-        <div class="lm-text">
-          <div class="section-label">Free Resource</div>
-          <h2>Get the <span class="gold-text">AI Automation Audit</span><br>Checklist — Free</h2>
-          <p>The same 47-point checklist we use when auditing professional services firms. Find every hour being wasted and every lead being missed in your practice.</p>
-          <ul class="lm-bullets">
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg> 47 automation opportunities to check</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg> Scoring system to prioritise quick wins</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg> Bonus: Free 30-min strategy call with every download</li>
-          </ul>
+      <div class="lead-grid">
+        <div class="lead-text reveal">
+          <span class="section-tag">Free resource</span>
+          <h2>47-point AI Automation Audit. Free.</h2>
+          <p>The checklist we use when auditing professional services firms. Work through it in an hour and you'll know exactly where you're losing time and leads — and what to fix first.</p>
+          <p>No upsell at the end. Just the checklist and a 30-minute call if you want to talk through what you found.</p>
         </div>
-        <form class="lm-form" id="lead-form">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+        <form class="lead-form reveal" id="lead-form" novalidate>
+          <div class="form-row">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Your name" required />
           </div>
-          <div class="form-group">
-            <label for="email">Work Email</label>
-            <input type="email" id="email" name="email" placeholder="you@yourfirm.com" required autocomplete="email" />
+          <div class="form-row">
+            <label for="f-email">Work email</label>
+            <input type="email" id="f-email" name="email" autocomplete="email" placeholder="you@yourfirm.com" required />
           </div>
-          <div class="form-group">
-            <label for="firm-type">Firm Type</label>
-            <select id="firm-type" name="firm_type" required>
-              <option value="">Select your practice area</option>
-              <option value="law">Law Firm</option>
-              <option value="finance">Financial Advisory</option>
+          <div class="form-row">
+            <label for="f-type">Practice type</label>
+            <select id="f-type" name="firm_type" required>
+              <option value="">Select your practice</option>
+              <option value="law">Law firm</option>
+              <option value="finance">Financial advisory</option>
               <option value="accounting">Accountancy</option>
-              <option value="other">Other Professional Services</option>
+              <option value="other">Other professional services</option>
             </select>
           </div>
           <button type="submit" class="btn-primary btn-full" id="form-btn">
-            <span id="btn-text">Send Me the Checklist</span>
-            <span id="btn-loading" style="display:none">Sending...</span>
+            Send me the checklist
           </button>
-          <p class="form-note">No spam. Unsubscribe anytime. Your data is never sold.</p>
+          <p class="form-note">No spam. Unsubscribe any time.</p>
           <div id="form-success" class="form-success" style="display:none">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#22c55e" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <strong>Check your inbox!</strong> We've sent the checklist and will be in touch shortly.
+            Checklist on its way. Check your inbox in the next few minutes.
           </div>
           <div id="form-error" class="form-error" style="display:none">
-            Something went wrong. Please try again or email us directly.
+            Something went wrong. Email us at hello@streamlineai.co.uk instead.
           </div>
         </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIALS ── -->
-  <section id="testimonials" class="section section-dark">
-    <div class="container">
-      <div class="section-label">Client Feedback</div>
-      <h2>What Our Clients Say</h2>
-      <div class="testimonials-grid">
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <p>"StreamLine AI completely transformed how we handle new enquiries. The chatbot qualifies prospects overnight and I wake up to booked consultations. It's genuinely changed the business."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">JM</div>
-            <div>
-              <strong>James M.</strong>
-              <span>Partner, Financial Advisory</span>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <p>"We were sceptical that AI could handle our client intake — legal matters feel personal. But the system they built is thoughtful, professional, and saves us at least 15 hours a week."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">SC</div>
-            <div>
-              <strong>Sarah C.</strong>
-              <span>Director, Law Practice</span>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <p>"The course gave me everything I needed to set up our own AI systems in-house. The templates alone saved us thousands. Highly recommended for any firm looking to modernise."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">RP</div>
-            <div>
-              <strong>Richard P.</strong>
-              <span>Principal, Accountancy Practice</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── BOOKING ── -->
-  <section id="booking" class="section">
-    <div class="container">
-      <div class="booking-wrap">
-        <div class="booking-text">
-          <div class="section-label">Book a Call</div>
-          <h2>Get Your Free<br><span class="gold-text">AI Strategy Session</span></h2>
-          <p>30 minutes. No pitch. We'll map your firm's automation opportunities, show you exactly what AI can do for your specific practice, and give you a clear roadmap — whether you work with us or not.</p>
-          <ul class="booking-promises">
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg> Bespoke audit of your current workflow</li>
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg> Clear ROI estimate for AI automation</li>
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg> Specific recommendations for your niche</li>
-            <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg> No obligation, no hard sell</li>
-          </ul>
-        </div>
-        <div class="booking-cal">
-          <!-- Replace with your Calendly URL -->
-          <div class="cal-placeholder" id="cal-embed">
-            <div class="cal-inner">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="8" width="36" height="34" rx="3" stroke="#C9A84C" stroke-width="1.5"/><path d="M6 18h36M16 6v4M32 6v4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="30" r="6" fill="#C9A84C" opacity="0.2"/><path d="M21 30l2 2 4-4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <p>Calendly booking widget loads here.</p>
-              <p class="cal-note">Add your Calendly URL in app.py to enable live scheduling.</p>
-              <a href="#" class="btn-primary" id="cal-btn">Book Your Free Call</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ABOUT ── -->
-  <section id="about" class="section section-dark">
-    <div class="container">
-      <div class="about-wrap">
-        <div class="about-text">
-          <div class="section-label">About StreamLine AI</div>
-          <h2>Built by a Practitioner<br><span class="gold-text">Who's Done the Work</span></h2>
-          <p>StreamLine AI was founded after years building AI systems for financial advisory and legal practices — not theorising about it. Every system we deploy is based on real-world automation we've already tested and proved in live professional services environments.</p>
-          <p>We only work with a small number of firms at any time to ensure every client gets the attention their business deserves.</p>
-          <div class="about-badges">
-            <div class="ab">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.4 5.4 6 .5-4.4 4 1.4 5.8L10 15l-5.4 2.7 1.4-5.8-4.4-4 6-.5z" stroke="#C9A84C" stroke-width="1.2" fill="none"/></svg>
-              Proven Track Record
-            </div>
-            <div class="ab">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2z" stroke="#C9A84C" stroke-width="1.2"/><path d="M10 6v4l3 2" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/></svg>
-              72h Deploy Guarantee
-            </div>
-            <div class="ab">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17 11H3M3 11l5-5M3 11l5 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              UK-Based & Regulated
-            </div>
-          </div>
-        </div>
-        <div class="about-stats">
-          <div class="as-card">
-            <span class="as-num">2+</span>
-            <span class="as-label">Years Deploying AI</span>
-          </div>
-          <div class="as-card">
-            <span class="as-num">£50k+</span>
-            <span class="as-label">Saved for Clients</span>
-          </div>
-          <div class="as-card">
-            <span class="as-num">100%</span>
-            <span class="as-label">Client Retention</span>
-          </div>
-          <div class="as-card">
-            <span class="as-num">72h</span>
-            <span class="as-label">Avg. Deploy Time</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -536,42 +374,102 @@
   <!-- ── FAQ ── -->
   <section id="faq" class="section">
     <div class="container">
-      <div class="section-label">FAQ</div>
-      <h2>Common Questions</h2>
+      <div class="section-header">
+        <span class="section-tag">Questions</span>
+        <h2>Straight answers.</h2>
+      </div>
       <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">How long does implementation take?</button>
-          <div class="faq-a">Most systems are designed, built, and live within 72 hours of signing. Complex bespoke integrations may take up to 7 days.</div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">How long does it actually take to deploy?</button>
+          <div class="faq-a"><p>Most systems go live within 72 hours of signing. That covers the chatbot, booking integration, email sequences, and CRM setup. Complex custom integrations — existing case management software, bespoke CRMs — can take up to a week.</p></div>
         </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Will this work for my specific type of practice?</button>
-          <div class="faq-a">Yes. We've built systems for law firms, financial advisors, accountancy practices, IFAs, and other professional services. If you have clients and a workflow, we can automate it.</div>
-        </div>
-        <div class="faq-item">
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false">Do I need any technical knowledge?</button>
-          <div class="faq-a">None. We handle everything from build to deployment. You get a fully working system and simple controls to manage it. No coding required.</div>
+          <div class="faq-a"><p>None. We build and deploy everything. You get a working system and a simple dashboard. If something needs changing, you ask us or adjust it yourself through a basic settings panel — no code involved.</p></div>
         </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">What if I just want to do it myself?</button>
-          <div class="faq-a">The AI Business Course is exactly what you need. You'll get our complete system, templates, and step-by-step walkthroughs to implement everything yourself.</div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Will it work for my specific kind of practice?</button>
+          <div class="faq-a"><p>We've built systems for law firms, IFAs, financial advisory practices, accountants, and tax advisors. The audit call (free, 30 minutes) is how we find out whether your workflow fits — and it usually does. If it doesn't, we'll tell you.</p></div>
         </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Is the AI compliant with UK data regulations?</button>
-          <div class="faq-a">Yes. All systems are built with GDPR compliance in mind, with appropriate data handling, consent flows, and privacy controls built in from day one.</div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Is client data secure?</button>
+          <div class="faq-a"><p>Yes. Data is stored in the UK, GDPR-compliant by design, and never sold or shared with third parties. Consent flows are built into the intake process. We can walk you through the architecture if your compliance team wants to review it.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">What if I just want to build it myself?</button>
+          <div class="faq-a"><p>The course (£497) covers everything we do for clients — all the templates, scripts, and setup walkthroughs. Buy once, build whenever you're ready. No subscription.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── FINAL CTA ── -->
-  <section class="section final-cta">
+  <!-- ── CONTACT / CTA ── -->
+  <section id="contact" class="section section-black">
     <div class="container">
-      <div class="fcta-inner">
-        <h2>Ready to Automate Your Firm?</h2>
-        <p>Book a free 30-minute AI audit. Walk away with a clear plan — no obligation.</p>
-        <div class="fcta-btns">
-          <a href="#booking" class="btn-primary btn-lg">Book Your Free Session</a>
-          <a href="#lead-magnet" class="btn-ghost">Get the Free Checklist First</a>
+      <div class="cta-inner reveal">
+        <p class="cta-kicker">Ready to start</p>
+        <h2>Request access</h2>
+        <p class="cta-body">We work with a small number of firms at any given time. Fill out the form and we'll be in touch within one business day to schedule the audit call.</p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="cf-row">
+            <div class="form-row">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" name="name" autocomplete="name" placeholder="Your name" required />
+            </div>
+            <div class="form-row">
+              <label for="c-email">Work email</label>
+              <input type="email" id="c-email" name="email" autocomplete="email" placeholder="you@yourfirm.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="c-firm">Firm name and type</label>
+            <input type="text" id="c-firm" name="firm" placeholder="e.g. Smith & Co Solicitors" />
+          </div>
+          <div class="form-row">
+            <label for="c-msg">What are you trying to fix?</label>
+            <textarea id="c-msg" name="message" rows="3" placeholder="Briefly describe the problem — manual intake, slow follow-ups, missed leads, etc."></textarea>
+          </div>
+          <button type="submit" class="btn-white btn-full" id="contact-btn">
+            Submit request
+          </button>
+          <div id="contact-success" class="form-success-light" style="display:none">
+            Request received. We'll be in touch within one business day.
+          </div>
+          <div id="contact-error" class="form-error-light" style="display:none">
+            Something went wrong. Email hello@streamlineai.co.uk directly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" class="section section-bone">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="section-tag">About</span>
+          <h2>Built by someone who's done the work.</h2>
+          <p>StreamLine AI came out of building AI systems for a financial advisory practice and a legal technology platform — not from reading about it. Every system we deploy has been tested in a real professional services environment first.</p>
+          <p>We work with a small number of clients at a time so we can do the work properly. If we don't think we can help you, we'll tell you on the first call.</p>
+        </div>
+        <div class="about-facts reveal">
+          <div class="af-item">
+            <span class="af-n">2+</span>
+            <span class="af-l">years deploying AI in professional services</span>
+          </div>
+          <div class="af-item">
+            <span class="af-n">72h</span>
+            <span class="af-l">average deployment time</span>
+          </div>
+          <div class="af-item">
+            <span class="af-n">100%</span>
+            <span class="af-l">client retention</span>
+          </div>
+          <div class="af-item">
+            <span class="af-n">UK-based</span>
+            <span class="af-l">data residency and support</span>
+          </div>
         </div>
       </div>
     </div>
@@ -580,86 +478,19 @@
   <!-- ── FOOTER ── -->
   <footer>
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="#C9A84C" stroke-width="1.5" fill="none"/><circle cx="14" cy="14" r="3" fill="#C9A84C"/></svg>
-            StreamLine<span class="gold">AI</span>
-          </a>
-          <p>AI automation for professional services firms. Law, finance, accounting.</p>
-        </div>
-        <div class="footer-links">
-          <div class="fl-col">
-            <strong>Services</strong>
-            <a href="#services">Done-For-You</a>
-            <a href="#services">AI Retainer</a>
-            <a href="#course">AI Course</a>
-          </div>
-          <div class="fl-col">
-            <strong>Company</strong>
-            <a href="#about">About</a>
-            <a href="#results">Case Studies</a>
-            <a href="#faq">FAQ</a>
-          </div>
-          <div class="fl-col">
-            <strong>Get Started</strong>
-            <a href="#booking">Book a Call</a>
-            <a href="#lead-magnet">Free Checklist</a>
-            <a href="mailto:hello@streamlineai.co.uk">Contact Us</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 StreamLine AI Ltd. All rights reserved. Registered in England & Wales.</p>
-        <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
+      <div class="footer-inner">
+        <span class="footer-logo">StreamLine AI</span>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Privacy</a>
+        </nav>
+        <p class="footer-copy">© 2025 StreamLine AI Ltd. Registered in England and Wales.</p>
       </div>
     </div>
   </footer>
-
-  <!-- ── AI CHAT WIDGET ── -->
-  <div id="chat-widget">
-    <div id="chat-box" class="chat-hidden">
-      <div class="chat-header">
-        <div class="chat-header-info">
-          <div class="chat-avatar-sm">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L16 5.5V12.5L9 16L2 12.5V5.5L9 2Z" stroke="#0a0a0a" stroke-width="1.2" fill="#C9A84C"/></svg>
-          </div>
-          <div>
-            <strong>StreamLine AI</strong>
-            <span class="chat-online">Online now</span>
-          </div>
-        </div>
-        <button id="chat-close" aria-label="Close chat">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-      <div id="chat-messages">
-        <div class="msg msg-ai">
-          <p>Hi! I'm the StreamLine AI assistant. I can answer any questions about our AI automation services for professional firms.</p>
-          <p style="margin-top:8px">What type of practice do you run?</p>
-        </div>
-      </div>
-      <div class="chat-quick-replies" id="quick-replies">
-        <button class="qr-btn" data-msg="I run a law firm">Law firm</button>
-        <button class="qr-btn" data-msg="I run a financial advisory">Finance</button>
-        <button class="qr-btn" data-msg="I run an accountancy practice">Accountancy</button>
-      </div>
-      <div class="chat-input-wrap">
-        <input type="text" id="chat-input" placeholder="Ask me anything..." autocomplete="off" />
-        <button id="chat-send" aria-label="Send message">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9l14-7-7 14V9H2z" fill="currentColor"/></svg>
-        </button>
-      </div>
-    </div>
-    <button id="chat-toggle" aria-label="Open chat assistant">
-      <svg id="chat-icon-open" width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3C7.477 3 3 7.254 3 12.5c0 2.07.653 3.988 1.763 5.558L3 23l5.27-1.66A10.18 10.18 0 0 0 13 22c5.523 0 10-4.254 10-9.5S18.523 3 13 3z" stroke="white" stroke-width="1.5"/></svg>
-      <svg id="chat-icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" style="display:none"><path d="M4 4l14 14M18 4L4 18" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-      <span class="chat-notification" id="chat-notif">1</span>
-    </button>
-  </div>
 
   <script src="static/js/main.js"></script>
 </body>
