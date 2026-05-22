@@ -1,5 +1,5 @@
 """
-StreamLine AI — Flask Backend
+Stu Legal — Flask Backend
 Handles: lead capture, AI chat qualification, email notifications
 """
 import os
@@ -25,7 +25,7 @@ CALENDLY_URL      = os.getenv('CALENDLY_URL', 'https://calendly.com/your-link')
 # ── AI CLIENT ─────────────────────────────────────────────────────────────────
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY) if ANTHROPIC_API_KEY else None
 
-SYSTEM_PROMPT = """You are the StreamLine AI assistant — a helpful, professional sales qualifier for a UK-based AI automation agency that works exclusively with professional services firms (law firms, financial advisors, and accountancy practices).
+SYSTEM_PROMPT = """You are the Stu Legal assistant — a helpful, professional sales qualifier for a UK-based AI automation agency that works exclusively with professional services firms (law firms, financial advisors, and accountancy practices).
 
 Your job is to:
 1. Understand the prospect's business and pain points
@@ -100,7 +100,7 @@ def chat():
     if not client:
         return jsonify({'reply': (
             "Thanks for reaching out! Our AI assistant is being configured. "
-            "In the meantime, please email hello@streamlineai.co.uk or book a call above."
+            "In the meantime, please email hello@stulegal.co.uk or book a call above."
         )}), 200
 
     try:
@@ -115,7 +115,7 @@ def chat():
     except Exception as e:
         app.logger.error(f'Chat error: {e}')
         return jsonify({'reply': (
-            "I'm having a brief technical issue. Please email hello@streamlineai.co.uk "
+            "I'm having a brief technical issue. Please email hello@stulegal.co.uk "
             "or book a call — we'd love to chat."
         )}), 200
 
@@ -148,8 +148,8 @@ def _log_lead(name, email, firm_type):
 
 
 def _send_lead_notification(name, email, firm_type):
-    subject = f"New StreamLine AI Lead: {name} ({firm_type})"
-    body = f"""New lead captured on StreamLine AI website!
+    subject = f"New Stu Legal Lead: {name} ({firm_type})"
+    body = f"""New lead captured on Stu Legal website!
 
 Name:      {name}
 Email:     {email}
@@ -166,10 +166,10 @@ Calendly: {CALENDLY_URL}
 
 def _send_welcome_email(name, email, firm_type):
     first_name = name.split()[0] if name else 'there'
-    subject = "Your AI Automation Audit Checklist — StreamLine AI"
+    subject = "Your AI Automation Audit Checklist — Stu Legal"
     body = f"""Hi {first_name},
 
-Thanks for downloading the StreamLine AI Automation Audit Checklist!
+Thanks for downloading the Stu Legal Automation Audit Checklist!
 
 You'll find the 47-point checklist attached. Work through each section to identify every automation opportunity in your {firm_type or 'practice'}.
 
@@ -184,11 +184,11 @@ If you'd like to discuss what this could look like for your specific firm, I'd b
 Book here: {CALENDLY_URL}
 
 Best,
-The StreamLine AI Team
+The Stu Legal Team
 
 ---
-StreamLine AI | AI Automation for Professional Services
-hello@streamlineai.co.uk
+Stu Legal | AI Automation for Professional Services
+hello@stulegal.co.uk
 Unsubscribe: reply with "unsubscribe"
 """
     _send_email(email, subject, body)
@@ -201,7 +201,7 @@ def _send_email(to, subject, body):
     try:
         msg = MIMEMultipart('alternative')
         msg['Subject'] = subject
-        msg['From']    = f'StreamLine AI <{SMTP_USER}>'
+        msg['From']    = f'Stu Legal <{SMTP_USER}>'
         msg['To']      = to
         msg.attach(MIMEText(body, 'plain'))
         with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
